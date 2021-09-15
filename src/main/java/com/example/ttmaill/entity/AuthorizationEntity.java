@@ -1,6 +1,8 @@
 package com.example.ttmaill.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -8,13 +10,11 @@ import java.util.Date;
 @Entity
 @Table(name="authorizatio")
 @Data
-public class AuthorizationEntity {
+public class AuthorizationEntity extends BaseEntity{
 
     //Quyền nhân viên
 
-    @Id
-    @Column(nullable = false, length = 64)
-    private String id;
+
     @ManyToOne
     @JoinColumn(nullable = false)
     private StaffEntity staffId;

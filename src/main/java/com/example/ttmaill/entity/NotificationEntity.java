@@ -1,6 +1,7 @@
 package com.example.ttmaill.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,10 +11,8 @@ import java.util.Date;
 @Entity
 @Table(name="notification")
 @Data
-public class NotificationEntity {
+public class NotificationEntity extends BaseEntity{
 
-    @Id
-    @Column(nullable = false, length = 64)
-    private String id;
+
 
 }

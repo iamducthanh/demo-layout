@@ -1,20 +1,17 @@
 package com.example.ttmaill.entity;
 
 import lombok.Data;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name="supplier")
 @Data
-public class SupplierEntity {
+public class SupplierEntity extends BaseEntity{
 
-    @Id
-    @Column(nullable = false, length = 64)
-    private String id;
+
     @Column(nullable = false, length = 100)
     private String name;
     @Column(nullable = false, length = 15)

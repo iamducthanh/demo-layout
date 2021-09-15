@@ -1,6 +1,7 @@
 package com.example.ttmaill.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -8,11 +9,9 @@ import java.util.Date;
 @Entity
 @Table(name="product")
 @Data
-public class ProductEntity {
+public class ProductEntity extends BaseEntity{
 
-    @Id
-    @Column(nullable = false, length = 64)
-    private String id;
+
     @Column(nullable = false, length = 150)
     private String name;
     @Column(nullable = false)

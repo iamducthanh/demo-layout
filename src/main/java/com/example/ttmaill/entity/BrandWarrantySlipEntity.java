@@ -1,17 +1,16 @@
 package com.example.ttmaill.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="brand_warranty_slip")
 @Data
-public class BrandWarrantySlipEntity {
+public class BrandWarrantySlipEntity extends BaseEntity{
 
-    @Id
-    @Column(nullable = false, length = 64)
-    private String id;
+
     @ManyToOne
     @JoinColumn(nullable = false)
     private SupplierEntity supplierId;

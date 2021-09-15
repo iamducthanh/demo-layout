@@ -1,6 +1,7 @@
 package com.example.ttmaill.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -8,11 +9,9 @@ import java.util.Date;
 @Entity
 @Table(name="product_image")
 @Data
-public class ProductImageEntity {
+public class ProductImageEntity extends BaseEntity{
 
-    @Id
-    @Column(nullable = false, length = 64)
-    private String id;
+
     @Column(nullable = false, unique = true)
     private String pathName;
     @ManyToOne
